@@ -15,8 +15,35 @@ body {
 .widget {
   background: linear-gradient(to right, #fafafa 65%, #e0e0e0 45%); 
   padding: 400px;      
-  width: 500px;      
+  width: 500px; 
+  height: 20px;     
   border-radius: 50px;      
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1); 
   text-align: center;        
 }
+.data{
+  color: grey;
+}
+
+input[type="text"] { 
+  position: absolute;
+  top: 120px;
+  right: 680px;
+  width: 25%;        
+  padding: 10px;       
+  border: 2px solid #ccc;  
+  border-radius: 5px; 
+  font-size: 16px;   
+  background-color: white;  
+  color: black;
+}
+input[type="text"]:focus {
+  outline: none;     
+  border-color: grey; 
+  box-shadow: 0 0 5px rgb(235, 229, 229); 
+}
+
+input[type="text"]::placeholder { 
+  color: black;
+} 
+
