@@ -21,7 +21,7 @@ body {
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1); 
   text-align: center;        
 }
-.data{
+.data1{
   color: grey;
 }
 
@@ -46,4 +46,132 @@ input[type="text"]:focus {
 input[type="text"]::placeholder { 
   color: black;
 } 
-
+.temp{
+  position: absolute;
+  top: 70px;
+  right: 950px;
+  font-size: 200px;
+}
+.weather-description{
+  position: absolute;
+  top: 500px;
+  font-size: 45px;
+  right: 960px;
+}
+.city{
+  position: absolute;
+  top: 150px;
+  font-size: 20px;
+  right: 70%;
+  color: black;
+}
+.temp2{
+  position: absolute;
+  top: 250px;
+  right: 400px;
+  font-size: 50px;
+}
+.weather-description2{
+  position: absolute;
+  top: 380px;
+  right: 350px;
+  font-size: 20px;
+}
+.hourly-forecast{
+  position: absolute;
+  top: 480px;
+  right: 350px;
+  font-size: 30px;
+  color: black;
+}
+.pill-1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  right: 500px;
+  top: 575px;
+  background-color: rgba(250, 250, 250, 0.7); 
+  border-radius: 13px; 
+  padding: 10px;
+  text-align: center;
+  width: 68px; 
+  margin: 5px;
+  height: 120px;
+}
+.pill-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  right: 390px;
+  top: 575px;
+  background-color: rgba(250, 250, 250, 0.7); 
+  border-radius: 13px; 
+  padding: 10px;
+  text-align: center;
+  width: 68px; 
+  margin: 5px;
+  height: 120px;
+}
+.pill-3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  right: 280px;
+  top: 575px;
+  background-color: rgba(250, 250, 250, 0.7); 
+  border-radius: 13px; 
+  padding: 10px;
+  text-align: center;
+  width: 68px; 
+  margin: 5px;
+  height: 120px;
+}
+.pill-4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  right: 500px;
+  top: 740px;
+  background-color: rgba(250, 250, 250, 0.7); 
+  border-radius: 13px; 
+  padding: 10px;
+  text-align: center;
+  width: 68px; 
+  margin: 5px;
+  height: 120px;
+}
+.pill-5 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  right: 390px;
+  top: 740px;
+  background-color: rgba(250, 250, 250, 0.7); 
+  border-radius: 13px; 
+  padding: 10px;
+  text-align: center;
+  width: 68px; 
+  margin: 5px;
+  height: 120px;
+}
+.pill-6 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  right: 280px;
+  top: 740px;
+  border-radius: 13px; 
+  padding: 10px;
+  text-align: center;
+  width: 68px; 
+  margin: 5px;
+  background-color: rgba(250, 250, 250, 0.7); 
+  border: 2px solid #e0e0e0;
+  height: 120px;
+}
