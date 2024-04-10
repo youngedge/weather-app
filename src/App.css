@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 body {
   background-color: #e0e0e0;
   margin: 0;
@@ -79,8 +80,9 @@ input[type="text"]::placeholder {
 }
 .hourly-forecast{
   position: absolute;
+  font-family: "Montserrat", sans-serif;
   top: 480px;
-  right: 350px;
+  right: 330px;
   font-size: 30px;
   color: black;
 }
@@ -182,11 +184,11 @@ input[type="text"]::placeholder {
 }
 .greeting {
   font-size: 40px;
-  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
   color: black;
   position: absolute;
   top: 130px;
-  right: 310px;
+  right: 290px;
 }
 .date{
   position: absolute;
@@ -198,9 +200,30 @@ input[type="text"]::placeholder {
 }
 .time {
   position: absolute;
-  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
   top: 220px;
   font-size: 40px;
   right: 21%;
   color: black;
+}
+.pill-items{
+
+}
+.hour-pill{
+    font-weight: bold;
+  position: absolute;
+  top: -1px;
+  right: 20px;
+}
+.temp-pill{
+  position: absolute;
+  top: 25px;
+  font-weight: bold;
+  font-size: 25px;
+  right: 15px;
+}
+.condition-pill{
+  position: absolute;
+  top: 80px;
+  right: 25px;
 }

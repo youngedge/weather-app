@@ -1,5 +1,13 @@
 import React from 'react';
 
+interface ForecastData {
+    time: string;
+    temp_c: number;
+    condition: {
+        text: string;
+    };
+}
+
 interface WeatherData {
     location: {
         name: string;
@@ -20,6 +28,7 @@ interface WeatherData {
             condition: {
                 text: string;
             };
+            hour: ForecastData[];
         };
     };
 }
@@ -66,7 +75,6 @@ const WeatherDisplay: React.FC<{ weatherData: WeatherData | null }> = ({
     let localtime: Date;
     if (typeof weatherData.location.localtime === "string") {
         localtime = new Date(weatherData.location.localtime);
-        console.log("Parsed localtime:", localtime); // Debugging
     } else {
         localtime = weatherData.location.localtime;
     }
@@ -78,29 +86,37 @@ const WeatherDisplay: React.FC<{ weatherData: WeatherData | null }> = ({
     const currentGreeting = greetByTime(localtime);
     const formattedDate = formatDate(localtime);
 
-    // Format the time to display in AM/PM format with uppercase letters
-    const formattedTime = localtime.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit', hour12: true })
-                            .replace(/(am|pm)/i, function(match) { return match.toUpperCase(); });
+    // Extract hourly forecast data
+    const hourlyForecastData: ForecastData[] = weatherData.forecast.forecastday[0].hour.slice(0, 6);
 
     return (
         <div className='data1'>
-            <span className='date'>{formattedDate}</span>
-            <span className='time'>{formattedTime}</span> {/* Display the formatted time */}
             <span className='city'><h2>{city}</h2></span>
             <span className='temp'><p>{temperature}°</p></span>
-            <span className='weather-description'>{weatherDescription}</span> {/* Display the weather description */}
+            <span className='weather-description'>{weatherDescription}</span>
+            <span className='temp2'><p>{temperature}°</p></span>
+            <span className='weather-description2'>{weatherDescription}</span>
+            <span className='date'>{formattedDate}</span>
+            <span className='time'>{localtime.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit', hour12: true })}</span>
             <div className='data2'>
                 <span className='greeting'>{currentGreeting}</span>
-                <span className='temp2'><p>{temperature}°</p></span>
-                <span className='weather-description2'>{weatherDescription}</span>
                 <span className='hourly-forecast'><p>Hourly Forecast</p></span>
                 <div className='hourly-pill'>
-                    <div className='pill-1'></div>
-                    <div className='pill-2'></div>
-                    <div className='pill-3'></div>
-                    <div className='pill-4'></div>
-                    <div className='pill-5'></div>
-                    <div className='pill-6'></div>
+                    {hourlyForecastData.map((hourlyData, index) => {
+                        // Parse the time string to get hour and minute
+                        const time = new Date(hourlyData.time);
+                        // Format hour to display in 12-hour format with AM/PM
+                        const hour = time.toLocaleString('en-US', { hour: 'numeric', hour12: true });
+                        return (
+                            <div key={index} className={`pill-${index + 1}`}>
+                                <div className='pill-items'>
+                                    <p className='hour-pill'>{hour}</p>
+                                    <p className='temp-pill'>{hourlyData.temp_c}°</p>
+                                    <p className='condition-pill'>{hourlyData.condition.text}</p>
+                                </div>
+                            </div>
+                        );
+                    })}
                 </div>
             </div>
         </div>
@@ -108,3 +124,4 @@ const WeatherDisplay: React.FC<{ weatherData: WeatherData | null }> = ({
 };
 
 export default WeatherDisplay;
+
